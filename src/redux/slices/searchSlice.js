@@ -7,17 +7,21 @@ export const searchSlice = createSlice({
        url:"",
    } ,
    reducers:{
-       setSearchURL: (state, newURL) => {
-           state.url = newURL.payload.value;
-           console.log('changed to ' + newURL.payload.value);
+       setSearchURL: (state,newURL) => {
+           state.url = newURL.payload;
+           console.log('changed to ' + newURL.payload);
        },
        startSearch: state => {
-           console.log('searching' +state.url.value);
+           console.log('searching ' +state.url);
        },
    }
 
 });
 
+
+
 export const {setSearchURL , startSearch} = searchSlice.actions;
+
+export const selectURL = state => state.search.url;
 
 export default  searchSlice.reducer;
