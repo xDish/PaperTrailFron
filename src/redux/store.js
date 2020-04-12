@@ -1,8 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from '../redux/reducers/search'
+import { createStore } from '@reduxjs/toolkit';
+import rootReducer from '../redux/reducers/';
+import {composeWithDevTools} from "@reduxjs/toolkit/src/devtoolsExtension";
 
-export default configureStore({
-    reducer: {
-        search: searchReducer,
-    },
-});
+export default function configureStore(){
+    return createStore(rootReducer,{}, composeWithDevTools());
+};

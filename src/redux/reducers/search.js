@@ -5,23 +5,20 @@ const searchReducer =(state = {}, action) => {
         case 'SEARCH_START':{
             return {
                 ...state,
-                fetching: true,
-                fetched: false,
+                isLoading:true,
             }
         }
         case 'SEARCH_RESULTS':{
             return{
                 ...state,
-                fetching:false,
-                fetched:true,
+                isLoading: false,
                 results: action.payload,
             }
         }
         case 'SEARCH_ERROR':{
             return{
                 ...state,
-                fetching:false,
-                fetched:false,
+                isLoading: false,
                 error: action.payload,
             }
         }
