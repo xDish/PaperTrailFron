@@ -10,3 +10,10 @@ export const searchResults = (result) =>{
         payload: result,
     }
 }
+
+export const searchError = (error) =>{
+    return{
+        type:'SEARCH_ERROR',
+        payload:error,
+    }
+}
